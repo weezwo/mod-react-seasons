@@ -17,18 +17,26 @@ class App extends React.Component {
   componentDidUpdate() { // when component is updated -- AFTER render
     
   }
-  // React forces us to define render!
-  render() { // Gets called all the dang time - be judicious
+
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat){
-      return <div>Error: {this.state.errorMessage}</div>
+      return <div>Error: {this.state.errorMessage}</div>;
     }
 
     if(!this.state.errorMessage && this.state.lat){
-      return <SeasonDisplay lat={this.state.lat} />
+      return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <Spinner message="Please accept location request." />
+    return <Spinner message="Please accept location request." />;
+  }
 
+  // React forces us to define render!
+  render() { // Gets called all the dang time - be judicious
+    return (
+      <div className="border">
+        {this.renderContent()}
+      </div>
+    );
   }
 }
 
