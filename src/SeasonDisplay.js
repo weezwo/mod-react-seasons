@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SeasonDisplay extends React.Component {
+const SeasonDisplay = (props) => {
   
 
 };
