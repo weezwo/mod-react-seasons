@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 // import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
-  constructor(props) { // first function called anytime component is rendered
-    super(props); // reference to parent constructor function
-    this.state = { lat: null, errorMessage: '' };
-  }
+
+  state = { lat: null, errorMessage: '' };
 
   componentDidMount() { // when component is rendered on screen -- good for data loading done once
     window.navigator.geolocation.getCurrentPosition(
